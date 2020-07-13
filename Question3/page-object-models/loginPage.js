@@ -7,15 +7,13 @@ var LoginPage = function() {
     await browser.get('https://my.wefox.de/login');
   };
 
-  this.typeEmail = async function(name) {
-    await this.emailInput.sendKeys(name);
-  };
+  this.enterCredentials = function (email, password) {
+    emailInput.sendKeys(protrator.Key.chord(protrator.Key.CONTROL, 'a'));
+    emailInput.sendKeys(email);
 
-  this.typePassword = async function(name) {
-    await passwordInput.clear().sendKeys(name);
-  };
+    passwordInput.sendKeys(protrator.Key.chord(protrator.Key.CONTROL, 'a'));
+    passwordInput.sendKeys(password);
 
-  this.confirmCredentials = function () {
     loginButton.click();
   }
 };

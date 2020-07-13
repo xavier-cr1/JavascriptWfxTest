@@ -11,12 +11,9 @@ describe('Go to Wefox login page', function () {
   });
 
   it('should let the user login with valid credentials', function() {
-    wefoxLoginPage.typeEmail('aqawefox+testtecnico@wefoxgroup.com');
+    
+    wefoxLoginPage.enterCredentials('aqawefox+testtecnico@wefoxgroup.com', 'qwertyasdf');
 
-    wefoxLoginPage.typePassword('qwertyasdf');
-
-    wefoxLoginPage.confirmCredentials();
-
-    browser.sleep(5000);
+    browser.sleep(20000);
   });
 });
